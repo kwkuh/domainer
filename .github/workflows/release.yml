@@ -45,7 +45,7 @@ jobs:
           awk "/^## \\[${VERSION}\\]/{flag=1; next} /^## \\[/{flag=0} flag" CHANGELOG.md > .release-notes.md
           cat .release-notes.md
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           body_path: .release-notes.md
           generate_release_notes: true
